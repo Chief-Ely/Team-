@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url(../img/Law/Project3/bg.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .project-card {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .project-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: #212529;
+            font-weight: 500;
+        }
+
+        .nav-item:hover .nav-link {
+            background-color: black;
+            /* Change this to the color you want on hover */
+            color: white;
+            /* Change text color on hover */
+            border-radius: .25rem;
+            /* Optional: to match Bootstrap's active state */
+        }
+    </style>
+</head>
+
+<body class="bg-light text-white position-relative vh-100" >
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-light navbar-light sticky-top" role="navigation"
+        aria-label="Main Navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#" aria-label="Home">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="../law.html" aria-label="Home link">
+                            <i class="fas fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="project1.html" aria-current="page" aria-label="Projects link">
+                            <i class="fas fa-folder-open"></i> Project 1
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="project2.html" aria-current="page" aria-label="Projects link">
+                            <i class="fas fa-folder-open"></i> Project 2
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="project3.html" aria-current="page" aria-label="Projects link">
+                            <i class="fas fa-folder-open"></i> Project 3
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid g-0 p-5">
+
+        <article class="card bg-light text-dark shadow project-card">
+            <img src="../img/law/Project3/1.png" alt="Screenshot of Project Title" class="card-img-top project-image" />
+
+            <div class="card-body">
+                <h1 class="card-title h4">
+                    <i class="fas fa-folder-open text-danger"></i> Blog Website
+                </h1>
+                <p class="card-text">
+                    <i class="fas fa-info-circle text-danger"></i>
+                    BlogTo blog page. Social media page
+                </p>
+                <div class="card-body d-flex flex-wrap gap-2 g-0">
+                    <a href="../law.html" class="btn btn-danger" aria-label="Go Back">
+                        <i class="fas fa-arrow-left"></i> Go Back
+                    </a>
+                    <a href="" class="btn btn-danger ms-auto" aria-label="Go Back">
+                        <i class="fas fa-arrow-up-right-from-square"></i> View Page
+                    </a>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <img src="../img/Law/Project3/fern.png" 
+    class="position-absolute ps-5" 
+    style="bottom: 0; left: 0; z-index: 1; height: 150px;" 
+    alt="Fern Image">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
