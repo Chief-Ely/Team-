@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lawrence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* * {
+            outline: 1px solid black;
+        } */
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .character-section{
+            background-image: url(img/Law/bghome.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .character-section {
+            position: relative;
+            background-color: white;
+            overflow: hidden;
+            /* border-radius: 20px; */
+            /* margin: 1rem 1rem 0 1rem; */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            position: relative;
+            clip-path: polygon(100% 0%, 100% 100%, 35% 100%, 0% 0%);
+            background-color: #ffecec;
+            /* border-radius: 0px; */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            /* border-radius: 0px; */
+
+        }
+
+        .text-content {
+            padding: 2rem;
+        }
+
+        .character-name {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .btn-custom {
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+        
+        .diagonal {
+            background-color: transparent;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            font-weight: 500;
+        }
+
+        .card-hover:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-item:hover .nav-link {
+            background-color: black;
+            /* Change this to the color you want on hover */
+            color: white;
+            /* Change text color on hover */
+            border-radius: .25rem;
+            /* Optional: to match Bootstrap's active state */
+        }
+
+        /* .flashlight {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.1) 100px, rgba(0,0,0,0.95) 200px);
+            mix-blend-mode: soft-light;
+            z-index: 9999;
+        } */
+
+        #flashlight-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background: radial-gradient(circle 200px at var(--x, 50%) var(--y, 50%), transparent 0%, rgba(0, 0, 0, 1) 100%);
+            z-index: 9999;
+            display: none;
+            mix-blend-mode: multiply;
+        }
+
+
+
+        @media (min-width: 768px) {
+            .character-section {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+
+            .image-container {
+                width: 50%;
+                clip-path: polygon(100% 0%, 100% 100%, 30% 100%, 0% 0%);
+            }
+
+            .text-content {
+                width: 50%;
+            }
+        }
+
+/* 
+        @media (min-width: 768px) {
+            .diagonal {
+                background-color: #ffc107;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .diagonal {
+                background-color: #dc3545;
+            }
+        } */
+    </style>
+</head>
+
+<body class="">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-danger navbar-dark sticky-top page-content " role="navigation"
+        aria-label="Main Navigation">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#" aria-label="Home">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="home.html" aria-label="Home link">
+                            <i class="fas fa-house"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="#about" aria-label="About Me link">
+                            <i class="fas fa-user"></i> About Me
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="#projects" aria-label="Projects link">
+                            <i class="fas fa-folder-open"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-2" href="#contact" aria-label="Contact link">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+
+                    <div class="dropdown">
+                        
+                        <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-lightbulb"></i>
+                            Theme
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#" id="theme-light">Light</a></li>
+                            <li><a class="dropdown-item" href="#" id="theme-dark">Dark</a></li>
+                            <li><a class="dropdown-item" id="toggle-flashlight" href="#">Ultra Dark</a></li>
+                        </ul>
+                    </div>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Character Section -->
+    <section class="character-section position-relative" aria-label="Home Page">
+
+        <!-- Image visible only on large + -->
+        <div class="page-content image-container d-none d-lg-block d-xl-block d-xxl-block bg-danger">
+            <img src="img/law/makima.jpeg" alt="Makima character image" class="img-fluid" />
+        </div>
+
+        <!-- Image visible only on medium -->
+        <div class="image-container d-none d-md-block d-lg-none bg-danger">
+            <img src="img/Law/makima3.png" class="img-fluid" alt="Makima second image" />
+        </div>
+
+        <!-- Image visible only on small -->
+        <div class="d-block d-sm-none position-absolute" style="bottom: 0; right: 0; z-index: 1;">
+            <img src="img/Law/makima2.png" class="img-fluid" style="max-width: 120px;"
+                alt="Makima small screen image" />
+        </div>
+
+
+
+        <!-- Text Content -->
+        <div class="text-content mt-lg-5">
+            <h1 id="name-heading" class="character-name pt-lg-5">LAWRENCE TAMAYO</h1>
+            <p class="fw-semibold">Web developer dedicated to building responsive and accessible websites with clean design and efficient code</p>
+            <p>
+                I’m a passionate web developer focused on creating responsive, user-friendly 
+                websites and systems. With a strong foundation in front-end and back-end technologies, 
+                I strive to build projects that are both visually appealing and functionally robust
+            </p>
+            <a href="" target="_blank" rel="noopener"
+                aria-label="Instagram profile">
+                <i class="fab fa-instagram me-1"></i>@lawrence_official
+            </a>
+            <div class="mt-3">
+                <button class="btn btn-dark btn-custom" aria-label="Hire Me Button"><i class="fas fa-briefcase"></i>
+                    Hire
+                    me</button>
+                <button class="btn btn-outline-dark btn-custom" aria-label="Contact Me Button"><i
+                        class="fas fa-book"></i>
+                    Contact Me</button>
+            </div>
+        </div>
+
+        <!-- <img src="img/law.jpg" class="position-absolute top-50 start-0" style="height:100px; width:100px"alt=""> -->
+
+    </section>
+
+    <!-- About Me Section -->
+    <section class="page-content py-5 position-relative" id="about">
+
+        <!-- Diagonal Background -->
+        <div class="page-content diagonal position-absolute top-0 start-0 w-100 bg-danger"
+            style="height: 100px; clip-path: polygon(0 0, 100% 0, 100% 100%, 0 70%); z-index: 0;">
+        </div>
+
+        <div class="container position-relative z-1">
+            <div class="row text-center mb-4">
+                <div class="col">
+                    <h2 class="fw-bold" aria-label="About Me">About Me</h2>
+                    <p class="text-muted" aria-label="Introduction text">Details and Contacts</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 p-5 text-center">
+                    <div class="position-relative d-inline-block" style="max-width: 220px;">
+                        <img src="img/lawrence.jpeg" class="img-fluid rounded-circle shadow border border-3 border-light"
+                            style="aspect-ratio: 1 / 1; width: 100%; object-fit: cover;" alt="Lawrence Image"
+                            aria-label="Profile image">
+
+                        <span
+                            class="position-absolute top-50 start-50 translate-middle rounded-circle border border-3 border-primary"
+                            style="width: 110%; height: 110%; z-index: -1;"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-8 p-5">
+                    <!-- Skill section -->
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body text-center">
+                                    <i class="fa-solid fa-server fa-2x text-primary mb-3" aria-hidden="true"></i>
+                                    <h5 class="card-title" aria-label="Backend Development">Backend</h5>
+                                    <p class="card-text">Experienced in building scalable APIs and backend services
+                                        using Node.js, PHP, and Laravel.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 shadow-sm border-0">
+                                <div class="card-body text-center">
+                                    <i class="fa-solid fa-database fa-2x text-success mb-3" aria-hidden="true"></i>
+                                    <h5 class="card-title" aria-label="Database Management">Databases</h5>
+                                    <p class="card-text">Proficient with MySQL, PostgreSQL, and MongoDB for secure and
+                                        optimized data handling.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row gy-5 align-items-center p-4 pb-5 px-md-5">
+                <!-- Character Background -->
+                <div class="col-md-6">
+                    <div class="border-start border-4 border-danger ps-4">
+                        <h4 class="fw-bold mb-3">
+                            <i class="fas fa-user-secret text-danger me-2"></i>Character Background
+                        </h4>
+                        <p class="">
+                            I am a hard-working and diligent student doing all What
+                            I can do to achieve my goals and leveraging existing solutions
+                            to solve real world problems
+                        </p>
+                        <ul class="list-group list-group-flush mt-3">
+                            <li class="list-group-item bg-transparent border-0 eText">
+                                <i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i> Student
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 eText">
+                                <i class="fas fa-chess-knight text-success me-2" aria-hidden="true"></i> Chess Player
+                            </li>
+                            <li class="list-group-item bg-transparent border-0 eText">
+                                <i class="fas fa-fire text-success me-2" aria-hidden="true"></i> Developer
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-6 pb-5">
+                    <div class="border-start border-4 border-primary ps-4">
+                        <h4 class="fw-bold mb-3">
+                            <i class="fas fa-id-card text-primary me-2"></i>Contact
+                        </h4>
+                        <p>
+                            <i class="fas fa-envelope text-primary me-2" aria-hidden="true"></i>
+                            <a href="" class="text-decoration-none"
+                                aria-label="Email">lawrencepaduatamayo@gmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fab fa-instagram text-danger me-2" aria-hidden="true"></i>
+                            <a href="" class="text-decoration-none" target="_blank"
+                                aria-label="Instagram">@law.official</a>
+                        </p>
+                        <p>
+                            <i class="fab fa-twitter text-info me-2" aria-hidden="true"></i>
+                            <a href="" class="text-decoration-none" target="_blank"
+                                aria-label="Twitter">@lawrence_official</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page-content diagonal position-absolute bottom-0 start-0 w-100 bg-danger"
+            style="height: 100px; clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%); z-index: -1;">
+        </div>
+
+    </section>
+
+    <!-- Finished Projects Section -->
+    <section class="page-content py-5 bg-light" id="projects">
+        <div class="container">
+            <div class="row text-center mb-4">
+                <div class="col">
+                    <h2 class="fw-bold" aria-label="Finished Projects">Finished Projects</h2>
+                    <p class="text-muted" aria-label="Showcasing completed works">A glimpse of successful missions led
+                        by me</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Project Card 1 -->
+                <div class="col-md-4" onclick="window.location.href='Law_projects/project1.html'">
+                    <div class="card-hover card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/law/project1/1.png" class="card-img-top" alt="Dragon Subjugation Image">
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fa-solid fas fa-blog fa-2x text-danger mb-3" aria-hidden="true"></i>
+                            <h5 class="card-title" aria-label="Login Page">Login Page</h5>
+                            <p class="card-text">
+                                Secure login interface with form validation and authentication logic
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="col-md-4  " onclick="window.location.href='Law_projects/project2.html'">
+                    <div class="card-hover card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/law/project2/1.png" class="card-img-top" alt="Ghost Devil Mission Image">
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fa-solid fas fa-blog fa-2x text-primary mb-3" aria-hidden="true"></i>
+                            <h5 class="card-title" aria-label="Book Management System">Book Management System
+                            </h5>
+                            <p class="card-text">
+                                Access your book inventory securely with user authentication and role-based login
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="col-md-4  " onclick="window.location.href='Law_projects/project3.html'">
+                    <div class="card-hover card h-100 shadow-sm border-0">
+                        <div class="ratio ratio-16x9">
+                            <img src="img/law/project3/1.png" class="card-img-top" alt="Defense Initiative Image">
+                        </div>
+                        <div class="card-body text-center">
+                            <i class="fa-solid fas fa-blog fa-2x text-success mb-3" aria-hidden="true"></i>
+                            <h5 class="card-title" aria-label="BlogTo Blog Website">BlogTo Blog Website</h5>
+                            <p class="card-text">
+                                Secure login for bloggers and readers to manage posts and engage with content
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section class="page-content py-5 page-content" id="contact">
+        <div class="container">
+            <div class="row text-center mb-4">
+                <div class="col">
+                    <h2 class="fw-bold" aria-label="Contact">Contact Me</h2>
+                    <p class="" aria-label="Contact form">Send a message or request an assignment.</p>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" aria-label="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" aria-label="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" aria-label="Your Message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger" id="liveToastBtn" aria-label="Submit contact form">Send
+                            Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Image visible only on large -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="img/law/makima.jpeg" class="img-fluid rounded shadow" alt="Makima contact illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-primary">
+                    <img src="./img/logo.png" style="width:1rem; height:1rem" class="rounded me-2" alt="...">
+                    <strong class="me-auto">Lawrence</strong>
+                    <small>Just now</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                <div class="toast-body">
+                We received the message. Please wait for response
+            </div>
+        </div>
+    </div>
+
+    <div id="flashlight-overlay"></div>
+    
+    <script>
+        const flashlight = document.getElementById("flashlight-overlay");
+        const contentElements = document.querySelectorAll(".page-content");
+        const eText = document.querySelectorAll(".eText");
+
+        let flashlightOn = false;
+    
+        // Ultra Dark Toggle
+        document.getElementById("toggle-flashlight").addEventListener("click", function(e) {
+            e.preventDefault();
+            flashlightOn = !flashlightOn;
+            flashlight.style.display = flashlightOn ? "block" : "none";
+            contentElements.forEach(el => {
+                el.classList.remove("bg-dark", "text-white");
+            });
+        });
+    
+        // Mouse tracking for flashlight
+        document.addEventListener("mousemove", function(e) {
+            if (flashlightOn) {
+                flashlight.style.setProperty('--x', `${e.clientX}px`);
+                flashlight.style.setProperty('--y', `${e.clientY}px`);
+            }
+        });
+    
+        // Light Theme
+        document.getElementById("theme-light").addEventListener("click", function(e) {
+            e.preventDefault();
+            flashlight.style.display = "none";
+            flashlightOn = false;
+            contentElements.forEach(el => {
+                el.classList.remove("bg-dark", "text-white");
+            });
+            eText.forEach(el => {
+                el.classList.remove("bg-dark", "text-white");
+            });
+        });
+    
+        // Dark Theme
+        document.getElementById("theme-dark").addEventListener("click", function(e) {
+            e.preventDefault();
+            flashlight.style.display = "none";
+            flashlightOn = false;
+            contentElements.forEach(el => {
+                el.classList.add("bg-dark", "text-white");
+            });
+            eText.forEach(el => {
+                el.classList.add("bg-dark", "text-white");
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

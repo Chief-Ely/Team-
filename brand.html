@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Brand Awareness Campaign - 6 Month Strategy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: #ff6a00;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover, a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(10, 10, 25, 0.8);
+      backdrop-filter: blur(12px);
+      padding: 15px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ff6a00;
+      user-select: none;
+    }
+
+    nav {
+      font-weight: 600;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 350px;
+      margin: 90px auto 40px;
+      padding: 0 20px 30px;
+    }
+
+    section {
+      margin-bottom: 50px;
+      position: relative;
+      padding: 0 5px;
+    }
+
+    h1, h2, h3 {
+      animation: fadeInSlideDown 1s ease forwards;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      color: #ff6a00;
+    }
+
+    h2 {
+      font-weight: 600;
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      color: #fff;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.7rem;
+      color: #ffe1cc;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      line-height: 1.4;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-cta {
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 5px 18px rgba(238, 9, 121, 0.75);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-cta:hover, .btn-cta:focus {
+      outline: none;
+      transform: scale(1.1);
+      box-shadow: 0 8px 26px rgba(238, 9, 121, 0.9);
+    }
+
+    /* Animated circles in background */
+    .circle {
+      position: fixed;
+      border-radius: 50%;
+      opacity: 0.15;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      z-index: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .circle1 {
+      width: 220px;
+      height: 220px;
+      background: #ff6a00;
+      top: 5%;
+      left: -80px;
+      animation-name: pulse1;
+      animation-duration: 6s;
+    }
+
+    .circle2 {
+      width: 180px;
+      height: 180px;
+      background: #ee0979;
+      bottom: 18%;
+      right: -70px;
+      animation-name: pulse2;
+      animation-duration: 8s;
+    }
+
+    .circle3 {
+      width: 140px;
+      height: 140px;
+      background: #2575fc;
+      top: 45%;
+      right: 20%;
+      animation-name: pulse3;
+      animation-duration: 10s;
+    }
+
+    @keyframes fadeInSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse1 {
+      0%, 100% {
+        transform: scale(1) translateY(0);
+        opacity: 0.15;
+      }
+      50% {
+        transform: scale(1.1) translateY(-10px);
+        opacity: 0.25;
+      }
+    }
+
+    @keyframes pulse2 {
+      0%, 100% {
+        transform: scale(1) translateX(0);
+        opacity: 0.15;
+      }
+      50% {
+        transform: scale(1.15) translateX(10px);
+        opacity: 0.3;
+      }
+    }
+
+    @keyframes pulse3 {
+      0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.15;
+      }
+      50% {
+        transform: scale(1.05) rotate(10deg);
+        opacity: 0.2;
+      }
+    }
+
+    /* Strategy Highlights */
+    .highlights {
+      background: rgba(255 255 255 / 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(255 106 0, 0.35);
+    }
+
+    .highlight-item {
+      margin-bottom: 1.5rem;
+      padding-left: 35px;
+      position: relative;
+    }
+
+    .highlight-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-item::before {
+      content: "✓";
+      position: absolute;
+      left: 10px;
+      top: 2px;
+      font-size: 1.2rem;
+      color: #ff6a00;
+      font-weight: 700;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin-left: 10px;
+      padding-left: 20px;
+      border-left: 2px solid #ff6a00;
+    }
+
+    .timeline-item {
+      margin-bottom: 1.6rem;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    /* .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      background: #ff6a00;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 8px #ff6a00;
+    } */
+
+    /* Testimonials */
+    .testimonials {
+      background: rgba(255 255 255 / 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(238, 9, 121, 0.35);
+    }
+
+    .testimonial-item {
+      margin-bottom: 1.5rem;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(255 255 255 / 0.12);
+      box-shadow: inset 0 0 10px rgba(255 255 255, 0.15);
+      font-style: italic;
+      font-size: 0.95rem;
+      position: relative;
+    }
+
+    .testimonial-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .testimonial-author {
+      margin-top: 8px;
+      font-weight: 700;
+      font-style: normal;
+      opacity: 0.85;
+      text-align: right;
+    }
+
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    input, textarea {
+      padding: 10px 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      resize: vertical;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+      background: rgba(255 255 255 / 0.15);
+      color: white;
+      box-shadow: inset 0 0 6px rgba(255 255 255, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ddd;
+    }
+
+    input:focus, textarea:focus {
+      background: rgba(255 255 255 / 0.3);
+      box-shadow: 0 0 12px #ff6a00;
+    }
+
+    button[type="submit"] {
+      align-self: center;
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      color: white;
+      padding: 14px 36px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 6px 20px rgba(238, 9, 121, 0.75);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    button[type="submit"]:hover, button[type="submit"]:focus {
+      outline: none;
+      transform: scale(1.1);
+      box-shadow: 0 9px 28px rgba(238, 9, 121, 0.9);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      padding: 20px 10px 30px;
+      opacity: 0.7;
+    }
+
+    footer a {
+      margin: 0 8px;
+    }
+
+    /* Responsive for small devices */
+    @media (max-width: 400px) {
+      main {
+        margin-top: 110px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      .btn-cta, button[type="submit"] {
+        padding: 12px 28px;
+        font-size: 1rem;
+      }
+    }
+
+    /* Tablets (min-width:600px) */
+    @media (min-width: 600px) {
+      main {
+        max-width: 550px;
+        margin-top: 120px;
+        padding: 0 30px 40px;
+      }
+      header {
+        padding: 20px 40px;
+      }
+      .logo {
+        font-size: 1.8rem;
+      }
+      nav a {
+        font-size: 1.1rem;
+        margin-left: 35px;
+      }
+      h1 {
+        font-size: 3.8rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+      .btn-cta, button[type="submit"] {
+        padding: 16px 48px;
+        font-size: 1.3rem;
+      }
+
+      .highlights {
+        padding: 30px;
+      }
+
+      .testimonials {
+        padding: 30px;
+      }
+    }
+
+    /* Laptops (min-width: 900px) */
+    @media (min-width: 900px) {
+      body, html {
+        background: linear-gradient(150deg, #6a11cb, #2575fc);
+      }
+      main {
+        max-width: 750px;
+        margin-top: 130px;
+        padding: 0 40px 50px;
+      }
+      header {
+        padding: 20px 60px;
+      }
+      .logo {
+        font-size: 2rem;
+      }
+      nav a {
+        font-size: 1.15rem;
+        margin-left: 40px;
+      }
+      h1 {
+        font-size: 4.2rem;
+      }
+      h2 {
+        font-size: 2.3rem;
+      }
+      h3 {
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 1.15rem;
+      }
+      .btn-cta, button[type="submit"] {
+        padding: 18px 54px;
+        font-size: 1.4rem;
+      }
+    }
+
+    /* Desktops (min-width: 1200px) */
+    @media (min-width: 1200px) {
+      main {
+        max-width: 900px;
+        margin-top: 140px;
+        padding: 0 60px 60px;
+      }
+      header {
+        padding: 20px 80px;
+      }
+      .logo {
+        font-size: 2.3rem;
+      }
+      nav a {
+        font-size: 1.25rem;
+        margin-left: 50px;
+      }
+      h1 {
+        font-size: 4.7rem;
+      }
+      h2 {
+        font-size: 2.6rem;
+      }
+      h3 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+      .btn-cta, button[type="submit"] {
+        padding: 20px 60px;
+        font-size: 1.5rem;
+      }
+      .highlights, .testimonials {
+        padding: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="circle circle1" aria-hidden="true"></div>
+  <div class="circle circle2" aria-hidden="true"></div>
+  <div class="circle circle3" aria-hidden="true"></div>
+
+  <header role="banner" aria-label="Main Navigation">
+    <div class="logo" tabindex="0">Brand Awareness</div>
+  
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" 
+            aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <nav id="mainNav" class="collapse d-md-flex" role="navigation" aria-label="Primary Navigation">
+      <a href="home.html" tabindex="0">Home</a>
+      <a href="#about" tabindex="0">About</a>
+      <a href="#strategy" tabindex="0">Strategy</a>
+      <a href="#timeline" tabindex="0">Timeline</a>
+      <a href="#testimonials" tabindex="0">Testimonials</a>
+      <a href="#contact" tabindex="0">Contact</a>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section class="hero" aria-label="Hero Section - Brand Awareness Campaign">
+      <h1>Ignite Your Brand Awareness</h1>
+      <h2>6-Month Digital Marketing Strategy for Startups</h2>
+      <p>Building Growth, Engagement & Loyalty for Your Startup's Success.</p>
+      <button class="btn-cta" aria-label="Get Started with Brand Awareness Campaign">Get Started</button>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About Our Campaign</h2>
+      <p>
+        Our Brand Awareness Campaign is designed to elevate your startup’s visibility in the market and connect with your target audience effectively.
+        Utilizing innovative digital marketing tactics tailored for startups, we drive meaningful engagement that converts into lasting loyalty.
+      </p>
+      <p>
+        Over the next six months, our comprehensive approach combines data-driven insights with creative strategies to make your brand stand out.
+      </p>
+    </section>
+
+    <section id="strategy" aria-labelledby="strategy-title">
+      <h2 id="strategy-title">Our 6-Month Strategy Highlights</h2>
+      <div class="highlights" role="list">
+        <div class="highlight-item" role="listitem">Deep Market and Audience Research</div>
+        <div class="highlight-item" role="listitem">Consistent Multi-Channel Social Media Campaigns</div>
+        <div class="highlight-item" role="listitem">Engaging Content Marketing and Storytelling</div>
+        <div class="highlight-item" role="listitem">Influencer Collaborations to Expand Reach</div>
+        <div class="highlight-item" role="listitem">SEO and Paid Ads to Boost Online Presence</div>
+        <div class="highlight-item" role="listitem">Regular Analytics and Strategy Optimization</div>
+      </div>
+    </section>
+
+    <section id="timeline" aria-labelledby="timeline-title">
+      <h2 id="timeline-title">Campaign Timeline</h2>
+      <div class="timeline" role="list">
+        <div class="timeline-item" role="listitem">
+          <h3>Month 1-2: Research & Planning</h3>
+          <p>Understanding your market, target audience, and crafting customized campaign plans.</p>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <h3>Month 3-4: Launch & Execute</h3>
+          <p>Launch multi-platform marketing campaigns with fresh content and strategic promotions.</p>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <h3>Month 5: Optimization</h3>
+          <p>Analyze campaign data and refine strategies for maximum impact and resource efficiency.</p>
+        </div>
+        <div class="timeline-item" role="listitem">
+          <h3>Month 6: Scale & Future Planning</h3>
+          <p>Expand campaigns based on success metrics and plan for sustained brand growth ahead.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" aria-labelledby="testimonials-title">
+      <h2 id="testimonials-title">What Our Partners Say</h2>
+      <div class="testimonials" role="list">
+        <div class="testimonial-item" role="listitem">
+          "This campaign took our startup to new heights! The targeted digital strategies brought in quality leads and genuine engagement."
+          <div class="testimonial-author">- Sarah L., Founder of TechNova</div>
+        </div>
+        <div class="testimonial-item" role="listitem">
+          "Highly recommend! The team is creative, responsive, and truly understands how to grow a brand from scratch."
+          <div class="testimonial-author">- Mike D., CEO of FreshWave</div>
+        </div>
+        <div class="testimonial-item" role="listitem">
+          "Our brand awareness tripled within the first four months, a game-changer for our launch timeline."
+          <div class="testimonial-author">- Anita P., Marketing Head at GreenRoots</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Us</h2>
+      <p>If you want to jumpstart your brand awareness journey or have any questions, reach out to us!</p>
+      <form aria-label="Contact form for Brand Awareness Campaign" id="contact-form" novalidate>
+        <label for="name">Name <sup aria-hidden="true" style="color:#ff6a00;">*</sup></label>
+        <input type="text" id="name" name="name" placeholder="Your Full Name" required aria-required="true" />
+        <label for="email">Email <sup aria-hidden="true" style="color:#ff6a00;">*</sup></label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required aria-required="true" />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+        <button type="submit" aria-label="Send Contact Message">Send Message</button>
+      </form>
+      <div id="form-message" role="alert" aria-live="polite" style="margin-top: 0.5rem;"></div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    &copy; 2024 BrandStart. All rights reserved. |
+    <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">Twitter</a> |
+    <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+  </footer>
+
+  <script>
+    // Button ripple effect (reuse from previous with slight improvement for multiple buttons)
+    function createRipple(event) {
+      const button = event.currentTarget;
+      const circle = document.createElement('span');
+      const diameter = Math.max(button.clientWidth, button.clientHeight);
+      const radius = diameter / 2;
+
+      circle.style.width = circle.style.height = diameter + 'px';
+      circle.style.left = event.clientX - button.getBoundingClientRect().left - radius + 'px';
+      circle.style.top = event.clientY - button.getBoundingClientRect().top - radius + 'px';
+      circle.classList.add('ripple');
+
+      const ripple = button.getElementsByClassName('ripple')[0];
+      if (ripple) {
+        ripple.remove();
+      }
+
+      button.appendChild(circle);
+    }
+
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', createRipple);
+    });
+
+    // Contact form handling with validation and submission simulation
+    const form = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      formMessage.textContent = '';
+      let valid = true;
+
+      // Simple validation
+      if (!form.name.value.trim()) {
+        valid = false;
+        formMessage.textContent = 'Please enter your name.';
+        form.name.focus();
+        return;
+      }
+      if (!form.email.value.trim() || !validateEmail(form.email.value.trim())) {
+        valid = false;
+        formMessage.textContent = 'Please enter a valid email address.';
+        form.email.focus();
+        return;
+      }
+      if (valid) {
+        formMessage.style.color = '#ff6a00';
+        formMessage.textContent = 'Sending your message...';
+
+        // Simulate async send
+        setTimeout(() => {
+          formMessage.style.color = 'lightgreen';
+          formMessage.textContent = 'Thank you for contacting us! We will get back to you shortly.';
+          form.reset();
+        }, 1500);
+      }
+    });
+
+    function validateEmail(email) {
+      // Basic email format check
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email.toLowerCase());
+    }
+
+  </script>
+
+  <style>
+    button {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      animation: rippleEffect 0.6s linear;
+      transform: scale(0);
+      pointer-events: none;
+      z-index: 10;
+    }
+    @keyframes rippleEffect {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
